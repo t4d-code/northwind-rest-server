@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const jsonServer = require('json-server')
 const fs = require('fs');
 const northwind = require('./northwind.js');
