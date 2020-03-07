@@ -1,0 +1,98 @@
+<html>
+
+<head>
+  <title>Northwind REST API Server</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    
+    span.code {
+      font-family: monospace;
+      font-size: larger;
+      display: block;
+      margin-top: 3px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: larger;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Northwind REST API Server</h1>
+  </header>
+  <main>
+    <div>
+      <p>
+        Welcome to the Northwind REST API Server
+      </p>
+
+      <img src="northwind_graph_simple.png" alt="" width="500px">
+
+      <p>
+        To access and modify resources, you can use any HTTP method:
+        <span class="code">GET POST PUT PATCH DELETE OPTIONS</span>
+      </p>
+
+      <h2>Examples</h2>
+      <p>
+        <ul id="app">
+          <li>
+            Get all categories:
+            <span class="code">GET {{origin}}/api/categories</span>
+          </li>
+          <li>
+            Get a category by Id 1:
+            <span class="code">GET {{origin}}/api/categories/1</span>
+          </li>
+          <li>
+            Adds a new category:
+            <span class="code">POST {{origin}}/api/categories</span>
+          </li>
+          <li>
+            Edit a category:
+            <span class="code">PUT {{origin}}/api/categories</span>
+          </li>
+          <li>
+            Delete a category with Id 1:
+            <span class="code">DELETE {{origin}}/api/categories/1</span>
+          </li>
+        </ul>
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>
+        <span style="text-align:center">
+          Thanks to
+          <a href="https://github.com/danielschmitz/northwind">Daniel Schmitz</a>
+          for the initial source code and web page for this project.
+        </span>
+      </small>
+    </div>
+  </footer>
+
+  <script src="vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        origin: location.origin,
+      }
+    })
+  </script>
+
+</body>
+
+</html>
